@@ -1,6 +1,8 @@
 # Amplify Integration Project Deployment Job DevOps Pipeline Example using GitHub Actions
 
-An example of how to use GitHub Actions and the Amplify Integration CLI to promote a project from DESIGN to LIVE.
+An example of how to use GitHub Actions and the [Amplify Integration CLI](https://confluence.axway.com/display/DX/Amplify+Integration+CLI#AmplifyIntegrationCLI-Overrideconnection) to promote a project from DESIGN to LIVE.
+
+The Pipeline was tested and developed with CLI version 1.7.1.
 
 ## Amplify Integration Project
 
