@@ -76,8 +76,14 @@ jobs:
           connection_password: ${{secrets.CONNECTION_LIVE_PASSWORD}}
         run: java -jar ampint.jar project connection override import -i httpserver.json
 
+      - name: Set mode to DESIGN
+        run: java -jar ampint.jar environment switch -n DESIGN
+
       - name: Run Deployment Job
         run: java -jar ampint.jar deployment run -n ${{env.DEPLOYJOBNAME}} -e LIVE
           
+      - name: Set mode to LIVE
+        run: java -jar ampint.jar environment switch -n LIVE
+
       - name: Enable event
         run: java -jar ampint.jar project event enable -n ${{env.AI_PROJECT_NAME}} -in ${{env.AI_INTEGRATION_NAME}} -cn "${{env.AI_DP_NAME}}"
