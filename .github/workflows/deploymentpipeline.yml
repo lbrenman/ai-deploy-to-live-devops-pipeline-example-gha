@@ -56,6 +56,14 @@ jobs:
       - name: Login into Amplify Integration Tenant
         run: java -jar ampint.jar auth login -u ${{env.CLI_USERNAME}} -p ${{secrets.CLI_PASSWORD}} --url ${{env.AI_TENANT_URL}}
 
+      - name: Create Deploy Job vars
+        run: |
+          echo "DEPLOYJOBNAME=${{ format('{0}{1}{2}', env.AI_PROJECT_NAME, '_dj_v', env.PROJECT_VERSION) }}" >> $GITHUB_ENV
+          echo "PROJPROJVERSION=${{ format('{0}{1}{2}', env.AI_PROJECT_NAME, ',V', env.PROJECT_VERSION) }}" >> $GITHUB_ENV
+          
+      - name: Create Deployment Job
+        run: java -jar ampint.jar deployment create -n ${{env.DEPLOYJOBNAME}} -d "Deployment Job" -pv ${{env.PROJPROJVERSION}}
+
       - name: Set mode to LIVE
         run: java -jar ampint.jar environment switch -n LIVE
 
@@ -70,14 +78,6 @@ jobs:
 
       - name: Set mode to DESIGN
         run: java -jar ampint.jar environment switch -n DESIGN
-
-      - name: Create Deploy Job vars
-        run: |
-          echo "DEPLOYJOBNAME=${{ format('{0}{1}{2}', env.AI_PROJECT_NAME, '_dj_v', env.PROJECT_VERSION) }}" >> $GITHUB_ENV
-          echo "PROJPROJVERSION=${{ format('{0}{1}{2}', env.AI_PROJECT_NAME, ',V', env.PROJECT_VERSION) }}" >> $GITHUB_ENV
-          
-      - name: Create Deployment Job
-        run: java -jar ampint.jar deployment create -n ${{env.DEPLOYJOBNAME}} -d "Deployment Job" -pv ${{env.PROJPROJVERSION}}
 
       - name: Run Deployment Job
         run: java -jar ampint.jar deployment run -n ${{env.DEPLOYJOBNAME}} -e LIVE
