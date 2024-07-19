@@ -4,7 +4,7 @@ An example of how to use GitHub Actions and the [Amplify Integration CLI](https:
 
 A demo video is below:
 
-![![](https://markdown-videos-api.jorgenkh.no/youtube/AI1QF_OvmbQ)](https://youtu.be/AI1QF_OvmbQ)
+[![](https://markdown-videos-api.jorgenkh.no/youtube/AI1QF_OvmbQ)](https://youtu.be/AI1QF_OvmbQ)
 
 The Pipeline was tested and developed with CLI version 1.7.1.
 
