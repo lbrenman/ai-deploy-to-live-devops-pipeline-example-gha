@@ -4,7 +4,7 @@ An example of how to use GitHub Actions and the [Amplify Integration CLI](https:
 
 A demo video is below:
 
-[![](https://markdown-videos-api.jorgenkh.no/youtube/AI1QF_OvmbQ)](https://youtu.be/AI1QF_OvmbQ)
+[![](https://markdown-videos-api.jorgenkh.no/youtube/sCFOTp2zsoA)](https://youtu.be/sCFOTp2zsoA)
 
 The Pipeline was tested and developed with CLI version 1.7.1.
 
@@ -29,7 +29,7 @@ Preparation:
 * Your project folder should contain:
   * A `manifest.json` file that you should create that will be edited with each current project version number to promote
   * A json file with the connection(s) export (e.g. `ampint project connection override get -n LBclitest -cn "http server" > httpserver.json`)
-    * Replace the credentials in the connection export with string literals which will be populated by Github secrets
+    * Replace the credentials in the connection export with environment variables as we assign github secrets to these env variables in the pipeline
       ![Image](https://i.imgur.com/Q6f5LcS.png)
   * The project export zip file (for backup purposes)
   * The Github action contained in `.github/workflows/deploymentpipeline.yml`. It will run and promote the project to LIVE whenever you check your project in (Push Origin)
