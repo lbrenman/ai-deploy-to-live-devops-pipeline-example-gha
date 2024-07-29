@@ -15,7 +15,7 @@ env:
   # Set these accordingly
   CLI_USERNAME: leor.brenman@gmail.com
   CLI_DOWNLOAD_URL: https://lbfiletest.s3.amazonaws.com/aiclitest2/ampint.jar
-  AI_TENANT_URL: https://demo.sandbox.ampint.axwaytest.net
+  AI_TENANT_URL: https://axway-appc-se.sandbox.ampint.axwaytest.net
   AI_PROJECT_NAME: LBclitest
   AI_INTEGRATION_NAME: flow1
   AI_DP_NAME: Shared Data Plane
