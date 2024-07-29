@@ -67,14 +67,14 @@ jobs:
       - name: Set mode to LIVE
         run: java -jar ampint.jar environment switch -n LIVE
 
-      # - name: Disable event
-      #   run: java -jar ampint.jar project event disable -n ${{env.AI_PROJECT_NAME}} -in ${{env.AI_INTEGRATION_NAME}} -cn "${{env.AI_DP_NAME}}"
+      - name: Disable event
+        run: java -jar ampint.jar project event disable -n ${{env.AI_PROJECT_NAME}} -in ${{env.AI_INTEGRATION_NAME}} -cn "${{env.AI_DP_NAME}}"
 
-      # - name: Override Connection in LIVE
-      #   env:
-      #     connection_username: ${{secrets.CONNECTION_LIVE_USERNAME}}
-      #     connection_password: ${{secrets.CONNECTION_LIVE_PASSWORD}}
-      #   run: java -jar ampint.jar project connection override import -i httpserver.json
+      - name: Override Connection in LIVE
+        env:
+          connection_username: ${{secrets.CONNECTION_LIVE_USERNAME}}
+          connection_password: ${{secrets.CONNECTION_LIVE_PASSWORD}}
+        run: java -jar ampint.jar project connection override import -i httpserver.json
 
       - name: Set mode to DESIGN
         run: java -jar ampint.jar environment switch -n DESIGN
