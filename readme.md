@@ -2,9 +2,7 @@
 
 An example of how to use GitHub Actions and the [Amplify Integration CLI](https://confluence.axway.com/display/DX/Amplify+Integration+CLI#AmplifyIntegrationCLI-Overrideconnection) to promote a project from DESIGN to LIVE.
 
-A demo video is below:
-
-[![](https://markdown-videos-api.jorgenkh.no/youtube/sCFOTp2zsoA)](https://youtu.be/sCFOTp2zsoA)
+A demo video can be found [here](https://youtu.be/sCFOTp2zsoA)
 
 The Pipeline was tested and developed with CLI version 1.7.1.
 
